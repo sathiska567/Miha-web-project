@@ -7,7 +7,7 @@ import authRoutes from "./routes/authRout.js";
 import blogRoutes from "./routes/blogRout.js";
 import ImageRoutes from './routes/ImageRoute.js';
 
-import path from 'path';
+// import path from 'path';
 
 import cors from 'cors';
 
@@ -25,12 +25,12 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// static file access
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// // static file access
+// app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
+// app.get('*', function(req, res) {
+//   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+// });
 
 // routes
 app.use("/api/vi/auth", authRoutes);
